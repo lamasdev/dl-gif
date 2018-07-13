@@ -1,0 +1,5 @@
+#Build
+/dist
+
+# third party libs
+/node_modules
