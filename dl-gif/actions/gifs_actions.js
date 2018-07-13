@@ -19,21 +19,29 @@ const retieveFail = error => (
   }
 );
 
-export function retrieveGifs() {
-  const url = '';
+export function retrieveGifs(search, lang, limit) {
+  const url = '/v1/gifs/search';
   return function (dispatch) {
     dispatch({ type: SET_LOADING });
     axios({
       method: 'get',
       url,
-      headers: {
+      params: {
+        api_key: 'qxbbq7WXPxGyY6UMtbQYHgjsAZDjZ1JV',
+        limit,
+        lang,
+        q: search,
+      },
+      /* headers: {
         'Content-Type': 'application/json',
         Accept: 'application/x.babylimit.v1.0.0+json',
         Authorization: localStorage.getItem('token'),
-      },
+      }, */
+
     }).then((response) => {
-      const paginatorResponse = response.data.data;
-      dispatch(retrieveSuccess(paginatorResponse, RETRIEVE_GIFS_SUCCESS));
+      const data = response.data;
+      console.log(response);
+      dispatch(retrieveSuccess(data, RETRIEVE_GIFS_SUCCESS));
     }).catch((error) => {
       if (error !== undefined) {
         if (error.response !== undefined) {

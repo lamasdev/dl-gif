@@ -1,21 +1,25 @@
 {
     "extends": "airbnb",
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-underscore-dangle": [2, { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
-        "jsx-a11y/label-has-for": [ 2, {
-            "components": [ "Label" ],
+        "react/jsx-filename-extension": [1, {
+            "extensions": [".js", ".jsx"]
+        }],
+        "no-underscore-dangle": [2, {
+            "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"]
+        }],
+        "jsx-a11y/label-has-for": [2, {
+            "components": ["Label"],
             "required": {
-                "some": [ "nesting", "id" ]
+                "some": ["nesting", "id"]
             },
             "allowChildren": false
         }],
         "prefer-destructuring": ["error", {
             "array": true,
             "object": false
-          }, {
+        }, {
             "enforceForRenamedProperties": false
-          }]
+        }]
     },
     "env": {
         "browser": true,
