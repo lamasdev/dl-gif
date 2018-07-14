@@ -1,87 +1,11 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
+import Gifs from '../components/Gifs';
 
 const MyComponent = () => (
   <div>
     <SearchBar />
-    <h1>
-      ejemplo 1
-    </h1>
-    <h1>
-      ejemplo 2
-    </h1>
-    <h1>
-      ejemplo 3
-    </h1>
-    <h1>
-      ejemplo 4
-    </h1>
-    <h1>
-      ejemplo 5
-    </h1>
-    <h1>
-      ejemplo 6
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
-    <h1>
-      ejemplo
-    </h1>
+    <Gifs />
   </div>
 );
 export default MyComponent;
