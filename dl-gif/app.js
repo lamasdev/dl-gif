@@ -7,7 +7,7 @@ import ReduxThunk from 'redux-thunk';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import reducers from './reducers';
-import MyComponent from './containers/example';
+import Main from './containers/Main';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,7 +20,7 @@ const ReduxApp = () => (
 );
 
 const App = () => (
-  <MyComponent />
+  <Main />
 );
 
 render(ReduxApp(), document.getElementById('root'));

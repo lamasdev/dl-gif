@@ -1,4 +1,4 @@
-const langOptions = [
+export const langOptions = [
   { name: 'English', value: 'en' },
   { name: 'Spanish', value: 'es' },
   { name: 'Portuguese', value: 'pt' },

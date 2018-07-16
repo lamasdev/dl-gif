@@ -4,6 +4,9 @@ import {
   SET_ERROR,
   RETRIEVE_GIFS_SUCCESS,
 } from './types';
+import {
+  GIPHY_API_KEY,
+} from '../config/config';
 
 const retrieveSuccess = (object, action) => (
   {
@@ -27,20 +30,13 @@ export function retrieveGifs(search, lang, limit) {
       method: 'get',
       url,
       params: {
-        api_key: 'qxbbq7WXPxGyY6UMtbQYHgjsAZDjZ1JV',
+        api_key: GIPHY_API_KEY,
         limit,
         lang,
         q: search,
       },
-      /* headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/x.babylimit.v1.0.0+json',
-        Authorization: localStorage.getItem('token'),
-      }, */
-
     }).then((response) => {
       const data = response.data;
-      console.log(response);
       dispatch(retrieveSuccess(data, RETRIEVE_GIFS_SUCCESS));
     }).catch((error) => {
       if (error !== undefined) {
@@ -52,6 +48,4 @@ export function retrieveGifs(search, lang, limit) {
   };
 }
 
-export function other() {
-  return true;
-}
+export default retrieveGifs;

@@ -5,7 +5,6 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  gif: null,
   gifsList: [],
   pagination: {},
   error: null,
@@ -19,19 +18,12 @@ const gifsReducer = (state = INITIAL_STATE, action) => {
     case SET_ERROR:
       return { ...state, loading: false, error: action.payload };
     case RETRIEVE_GIFS_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         ...INITIAL_STATE,
         pagination: action.payload.pagination,
         gifsList: action.payload.data,
       };
-    /* case RETRIEVE_GIFS_SUCCESS:
-      return {
-        ...state,
-        ...INITIAL_STATE,
-        gif: action.payload,
-      }; */
     default:
       return state;
   }

@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { retrieveGifs } from '../actions';
-import langOptions from '../lang-options';
+import { langOptions, searchDefault } from '../data';
+import { MAX_LIMIT, DEFAULT_LIMIT, DEFAULT_LANG } from '../config/config';
+
+const getRandomWord = () => searchDefault[Math.floor(Math.random() * searchDefault.length)];
 
 class SearchBar extends Component {
   constructor(props) {
@@ -14,8 +17,8 @@ class SearchBar extends Component {
 
     this.state = {
       search: '',
-      lang: 'en',
-      limit: 10,
+      lang: DEFAULT_LANG,
+      limit: DEFAULT_LIMIT,
       showBar: 'd-none d-md-flex',
     };
   }
@@ -23,7 +26,7 @@ class SearchBar extends Component {
   componentDidMount() {
     const { lang, limit } = this.state;
     const { retrieveGifs: retrieveGifsList } = this.props;
-    retrieveGifsList('goku', lang, limit);
+    retrieveGifsList(getRandomWord(), lang, limit);
   }
 
   handleInputChange(event) {
@@ -77,7 +80,7 @@ class SearchBar extends Component {
                 ))
               }
             </select>
-            <input name="limit" className="form-control mr-md-2 mb-2 mb-md-0 align-self-center flex-sm-fill col-sm-12 col-md-1" type="number" max="25" min="1" placeholder="limit" aria-label="limit" value={limit} onChange={this.handleInputChange} required />
+            <input name="limit" className="form-control mr-md-2 mb-2 mb-md-0 align-self-center flex-sm-fill col-sm-12 col-md-1" type="number" max={MAX_LIMIT} min="1" placeholder="limit" aria-label="limit" value={limit} onChange={this.handleInputChange} required />
             <button className="btn btn-success my-2 my-sm-0 ml-auto" type="submit">
               Search
             </button>
